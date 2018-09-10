@@ -1,0 +1,35 @@
+<script>
+function showArchMenu(archId) {
+		JsHttpRequest.query(
+            '/admin/page/ajaxReturnArchPages.php', // backend
+            {
+                // pass a text value 
+                'id': archId,
+            },
+            // Function is called when an answer arrives. 
+            function(result, errors) {
+                // Write the answer.
+                if (errors != "") {
+					alert("Messages on std_out: " + errors);
+				}
+				document.getElementById("archDiv_"+archId).innerHTML = result["return"];
+            },
+            true  // do not disable caching
+        );		
+	}
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%"><a href="add.php?lang={curLang}"><img src="/templates/ru/images/api/add.gif" width="15" height="15" border="0" align="absmiddle" /> Добавить новую страницу</a></td>
+    <td><div align="right"><a href="/admin/cfg/page/index.php"><img src="/templates/ru/images/api/pref.jpg" width="20" height="20" border="0" align="absmiddle" /> Настройка модуля</a> </div></td>
+  </tr>
+</table>
+<br />
+<table width="100%" border="0" cellpadding="4" cellspacing="0" class="inputTable">
+    <tr >
+	  <th >
+	    Управление страницами системы </th>
+	  <th >Позиция</th>
+    </tr>
+	{body}
+</table>

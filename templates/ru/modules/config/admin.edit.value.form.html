@@ -1,0 +1,48 @@
+<a href="/admin/config/" class="jump_back">Назад</a>
+<form action="editGo.php" method="post" class="general_form">
+    <div class="row">
+        <label>Категория:</label>
+        <div class="inputs">
+            <span class="input_wrapper">
+                <input class="text" type="text" name="category" value="{category}" disabled="disabled" />
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <label>Тип:</label>
+        <div class="inputs">
+            <span class="input_wrapper">
+                <input class="text" type="text" name="type" value="{type}" disabled="disabled" />
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <label>Переменная:</label>
+        <div class="inputs">
+            <span class="input_wrapper">
+                <input class="text" type="text" name="name" value="{name}" disabled="disabled" />
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <label>Название:</label>
+        <div class="inputs">
+            <span class="input_wrapper">
+                <input class="text" type="text" name="description" value="{description}" />
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <label>Значение:</label>
+        <div class="inputs">
+            <span class="input_wrapper textarea_wrapper">
+                <textarea rows="15" cols="3" name="value">{value}</textarea>
+            </span>
+        </div>
+    </div>
+    <p align="center"><input type="submit" id="submit" value="Сохранить" /></p>
+
+    <input type="hidden" name="category" value="{category}">
+    <input type="hidden" name="type" value="{type}">
+    <input type="hidden" name="name" value="{name}">
+</form>

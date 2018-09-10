@@ -1,0 +1,15 @@
+RewriteEngine ON
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond     %{REQUEST_FILENAME}     !-f
+RewriteCond     %{REQUEST_FILENAME}     !-d
+#RewriteBase /
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+
+php_flag display_errors 1
+php_flag display_startup_errors 1
+
+
+

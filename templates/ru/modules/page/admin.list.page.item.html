@@ -1,0 +1,32 @@
+<li>
+    <div>
+    <span{class}><b>{title}</b></span>&nbsp;
+        <span class="actions">
+            <a href="/admin/page/edit.php?id={id}" title="Редактировать">
+                <img src="/templates/ru/images/icn_edit_article.png" alt="Редактировать" align="absmiddle"/>
+            </a>
+            <a href="/admin/page/add.php?setOwnerId={id}" title="Добавить подстраницу">
+                <img src="/templates/ru/images/icn_new_article.png" alt="Добавить подстраницу" align="absmiddle"/>
+            </a>
+            <a class="delete" href="/admin/page/delete.php?id={id}" title="Удалить">
+                <img src="/templates/ru/images/icn_trash.png" alt="Удалить" align="absmiddle"/>
+            </a>
+            <a href="move.php?moveType=start&currentPosition={position}" title="Переместить в начало">
+                <img src="/templates/ru/images/arrow_top.png" alt="Переместить в начало" align="absmiddle"/>
+            </a>
+            <a href="move.php?moveType=up&currentPosition={position}" title="Переместить на одну позицию вверх">
+                <img src="/templates/ru/images/arrow_up.png" alt="Переместить на одну позицию вверх" align="absmiddle"/>
+            </a>
+            <a href="move.php?moveType=down&currentPosition={position}" title="Переместить на одну позицию вниз">
+                <img src="/templates/ru/images/arrow_down.png" alt="Переместить на одну позицию вниз"
+                     align="absmiddle"/>
+            </a>
+            <a href="move.php?moveType=end&currentPosition={position}" title="Переместить в конец">
+                <img src="/templates/ru/images/arrow_bottom.png" alt="Переместить в конец" align="absmiddle"/>
+            </a>
+
+    <span class="small">
+        [{id}] URL: {url} <a href="{url}"><img src="/templates/ru/images/icn_link.png" alt="link"
+                                                align="absmiddle"></a>
+    </span>
+        </span></div>

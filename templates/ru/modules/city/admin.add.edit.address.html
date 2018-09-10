@@ -1,0 +1,100 @@
+<a class="jump_back" href="/admin_shop/city/">Назад</a>
+<form action="?go=go&ownerId={ownerId}&name={name}" method="post" enctype="multipart/form-data" onsubmit='disableSubmit("submitForm");'>
+    <table border="0" width="100%" cellpadding="4" cellspacing="0" class="category_list">
+		<input type="hidden" name="ownerId" value="" />
+        <tr>
+            <td colspan="2" align="center">{error}</td>
+        </tr>
+	 
+		<!--<tr>
+            <td width="50%" align="right"><strong>Параметры:</strong></td>
+            <td>
+			<input type="checkbox" name="showtpl" value="1" {showtpl} />&nbsp;По умолчанию&nbsp;
+			<input type="checkbox" name="pointd" value="1" {pointd} />&nbsp;Пункт выдачи&nbsp;
+			<input type="checkbox" name="showcontacts" value="1" {showcontacts} />&nbsp;Показывать в контактах&nbsp;
+			</td>
+        </tr>-->
+			 
+		<tr>
+            <td align="right"><strong>Город:</strong></td>
+            <td>{selectcity}<input type="hidden" name="citycor" value="{city}"/></td>
+        </tr>
+
+	    <tr>
+            <td align="right"><strong>Название:</strong></td>
+            <td><input name="title" type="text" id="title" style="width: 99%;" value="{title}" maxlength="255"></td>
+        </tr>
+
+	    <tr>
+            <td align="right"><strong>Адрес:</strong></td>
+            <td><input name="address" type="text" id="address" style="width: 99%;" value="{address}"></td>
+        </tr>
+		<!--
+		<tr>
+            <td align="right"><strong>Координаты:</strong></td>
+            <td><input name="coordinates" type="text" id="coordinates" style="width: 67%;" value="{coordinates}">&nbsp;<span style="cursor:pointer;" id="getcoordinates"><strong>Получить координаты</strong></span></td>
+        </tr>
+		
+		<tr>
+            <td align="right"><strong>Текст всплывающей подсказки при нажатии на метку карты:</strong></td>
+            <td><input name="mapspoint" type="text" id="mapspoint" style="width: 99%;" value="{mapspoint}"></td>
+        </tr>		
+		
+	    <tr>
+            <td align="right">Телефон(ы):</td>
+            <td><input name="phone" type="text" id="phone" style="width: 99%;" value="{phone}"></td>
+        </tr>
+
+	    <tr>
+            <td align="right">Электронная почта:</td>
+            <td><input name="email" type="email" id="email" style="width: 99%;" value="{email}"></td>
+        </tr>
+		-->
+<!--
+        <tr>
+            <td align="right">[SEO] Заголовок страницы:</td>
+            <td><input name="navigationMainTitle" type="text" id="navigationMainTitle" style="width: 99%;" value="{navigationMainTitle}"></td>
+        </tr>
+
+        <tr>
+            <td align="right">[SEO] Краткое описание (md):</td>
+            <td><input name="md" type="text" id="md" style="width: 99%;" value="{md}"></td>
+        </tr>
+        <tr>
+            <td align="right">[SEO] Ключевые слова (mk): </td>
+            <td><input name="mk" type="text" id="mk" style="width: 99%;" value="{mk}"></td>
+        </tr>
+-->
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="  Сохранить  " class="submit" id="submitForm"></td>
+        </tr>
+    </table>
+</form>	
+<script type="text/javascript">
+  $(document).ready(function(){
+     $('#select{id}').change( function(){
+       $.ajax({
+         url: "getCityRegion.php",
+         type: "POST",
+         data: {region:$(this).val()},
+         success: function(data){   
+           $("#citych").html(data);
+         }
+       });
+     });
+	 /*
+	$('#getcoordinates').click(function(){
+		//alert($('input[name="citycor"]').val());
+		if ($('input[name="address"]').val().length > 0){
+		$.getJSON("http://geocode-maps.yandex.ru/1.x/?format=json&geocode=город "+$('input[name="citycor"]').val()+", "+$('input[name="address"]').val(),
+        function(data){
+		//	alert(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos);
+			$('input[name="coordinates"]').val(data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos);
+		});
+		} else {
+		alert('Поле адрес не должно быть пустым!');
+		}
+	})*/
+	
+  });
+  </script>

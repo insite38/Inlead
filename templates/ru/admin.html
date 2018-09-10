@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>{title}</title>
+
+    <link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/jquery.ui.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/theme.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/layout.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/dropzone.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/plazaStyle.css">
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="/templates/ru/css/ie.css" type="text/css" media="screen"/>
+    <script src="/templates/ru/api/html5.js"></script>
+    <![endif]-->
+
+    <!-- js -->
+    <script type="text/javascript" src="/templates/ru/api/jquery.min.js"></script>
+    <script type="text/javascript" src="/templates/ru/js/hideshow.js"></script>
+    <script type="text/javascript" src="/templates/ru/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="/include/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        function disableSubmit(id) {
+            but = document.getElementById(id);
+            but.style.color = "#555555";
+            but.style.background = "#999999";
+            but.disabled = true;
+            but.value = "Пожалуйста подождите...";
+        }
+
+        $(document).ready(function () {
+            $(".tablesorter").tablesorter();
+
+            $('a.tinymce_toggle').click(function (e) {
+                e.preventDefault();
+                var editor_id = $(this).parent().parent().find('textarea').attr('id');
+                tinymce.execCommand('mceToggleEditor', false, editor_id);
+
+                return false;
+            });
+
+            $(".tab_content").hide(); //Hide all content
+            $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+            $(".tab_content:first").show(); //Show first tab content
+
+            //On Click Event
+            $("ul.tabs li").click(function () {
+
+                $("ul.tabs li").removeClass("active"); //Remove any "active" class
+                $(this).addClass("active"); //Add "active" class to selected tab
+                $(".tab_content").hide(); //Hide all tab content
+
+                var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+                $(activeTab).fadeIn(); //Fade in the active ID content
+                return false;
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<header id="header">
+    <hgroup>
+        <h1 class="site_title"><a href="/admin/">Plaza CMS 2.5 </a>
+            <!-- <div class="language-select">
+                <form action="index.php?" method="POST">
+                    Выбрать язык: {selectAdminLang} <input type="submit" value="OK">
+                </form>
+            </div> -->
+        </h1>
+        <h2 class="section_title">
+        <form action="index.php?" name="cityAdmin" method="post" style="float:left;width:300px;margin-right:-250px;text-align:left">
+            <select name="city">
+                {cityAdminSelect}
+            </select>
+            <input type="submit" name="submitCityAdminSelect" value="Выбрать">
+        </form>
+        Администрирование</h2>
+        <div class="btn_view_site"><a href="/" target="_blank">на сайт</a></div>
+    </hgroup>
+</header> <!-- end of header bar -->
+
+<aside id="sidebar" class="column">
+    [adminMenu]
+    <h3>Настройки</h3>
+    <ul class="toggle">
+        <li class="icn_settings"><a href="/admin/config/" title="Основная конфигурация системы">Конфигураця</a></li>
+        <li class="icn_edit_article"><a href="/admin/config/robots.php" title="Файл Robots">Файл Robots</a></li>
+        <li class="icn_security"><a href="/admin/stat/" title="Полная статистика посещаемости сайта">Статистика</a></li>
+        <li class="icn_new_article"><a href="/help.doc" title="Подробная справка по системе управления в формате Doc">Помощь</a>
+        </li>
+        <li class="icn_jump_back"><a href="/admin/logout/" title="Выход из системы управления">Выход</a></li>
+    </ul>
+
+    <footer>
+        <hr/>
+        <p><strong>Copyright &copy; 2004 - {curYear} г.</strong></p>
+        <p>Разработано <a href="http://www.in-site.ru" target="_blank">in-site</a></p>
+    </footer>
+</aside><!-- end of sidebar -->
+
+
+<section id="main" class="column">
+
+    <article class="module width_full">
+        <header><h3>{pageTitle}</h3></header>
+        <div class="module_content">
+            {content}
+        </div>
+    </article><!-- end of styles article -->
+
+    <div class="spacer"></div>
+</section>
+<p style="display: none;"><a id="elpopup" href="#elfinder">click</a></p>
+<div id="fancybox" style="display: none;">
+    <div id="elfinder"></div>
+</div>
+
+    <script src="/templates/ru/js/dropzone.js"></script>
+    <script type="text/javascript" src="/templates/ru/js/plazaScript.js"></script>
+    
+<script type="text/javascript">
+    $(function () {
+        if ($('input').is('[name=uri]')) {
+            el = document.getElementsByName('title')[0];
+            el.onkeyup = function (e) {
+                oJS.strNormalize(this);
+            }
+        }
+        $('.collapsible .toggle-in').click(function (e) {
+            $(this).parent().parent().children('ul').toggle();
+        });
+
+        $('.toggle-tr strong span').click(function (e) {
+            var parent = $(this).parent().parent().parent();
+            var pos = parseInt($(parent).find('td:first').css('padding-left'));
+            var pol = $(parent).next().css('display');
+            $(parent).nextAll().each(function (e, a) {
+                // $(a).find('td:first strong span').append(e);
+                if (parseInt($(a).find('td:first').css('padding-left')) == pos + 30) {
+                    if (pol === "none") {
+                        $(a).show();
+                    } else {
+                        $(a).hide();
+                    }
+                    //$(a).toggle();//append(e);
+                } else if (parseInt($(a).find('td:first').css('padding-left')) > pos) {
+                    $(a).hide();
+                } else if (parseInt($(a).find('td:first').css('padding-left')) == pos) {
+                    return false;
+                }
+
+            });
+        });
+        $('.delete').click(function (e) {
+            e.preventDefault();
+            $("a.yes").attr("href", $(this).attr("href"));
+            $(".pageName").html($(this).parent().parent().find("b").clone());
+            $('#actionApprove').toggle();
+        });
+        $('.no').click(function (e) {
+            e.preventDefault();
+            $('#actionApprove').toggle();
+        });
+    });
+</script>
+</body>
+</html>

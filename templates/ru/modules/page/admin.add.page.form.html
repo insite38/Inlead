@@ -1,0 +1,103 @@
+<a class="jump_back" href="/admin/page/index.php">Назад</a>
+
+<form action="?lang={curLang}&id={id}" enctype="multipart/form-data" method="post" onsubmit='disableSubmit("formSubmit");'>
+    <input type="hidden" name="textAdd2" value="" />
+    
+    <table width="100%" border="0" cellpadding="4" cellspacing="0" class="category_list">
+        <tr>
+            <td colspan="2" align="center">{error}</td>
+        </tr>
+
+        <tr>
+            <td  align="right" width="50%"><strong>Родительская страница:</strong></td>
+            <td  align="left">{selectOwnerPage}</td>
+        </tr>
+
+        <tr>
+            <td align="right"><strong>Заголовок:</strong></td>
+            <td align="left"><input type="text" name="title" style="width: 99%;" value="{valueTitle}"></td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                <strong>Адрес страницы (uri):</strong><br />
+                <small><em>Только латинские символы, например: about</em></small>
+            </td>
+            <td align="left"><input type="text" name="uri" style="width: 99%;" value="{valueUri}"></td>
+        </tr>
+        
+        <tr>
+            <td align="right"> Показывать ли страницу в меню навигации</td>
+            <td align="left"> [selectNavigationShow="{valueNavigationShow}"] </td>
+        </tr>
+
+        <tr>
+            <td align="right">Шаблон (template):</td>
+            <td align="left">{selectTemplate}</td>
+        </tr>
+		
+        <tr>
+            <td align="right">Язык:</td>
+            <td align="left">[SelectLang="{valueLang}"]</td>
+        </tr>
+		
+        <tr>
+            <td align="right">Редирект:</td>
+            <td align="left"><input type="text" name="redirect" style="width: 99%;" value="{valueRedirect}"></td>
+        </tr>
+        <!--        
+        <tr>
+            <td align="right">Фото:</td>
+            <td align="left">--><input type="file" name="photo" style="width: 99%;visibility: hidden;" /><!--</td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                {photopage}
+            </td>
+        </tr>
+        
+        {uploadedPhoto}
+-->
+        <tr>
+            <th  colspan="2"><p><strong>Текст:</strong></p></th>
+        </tr>
+        
+        <tr>
+            <td align="center"  colspan="2">{fckFormText}</td>
+        </tr>
+
+         <tr>
+            <th  colspan="2"><p><strong>Короткое описание:</strong></p><textarea style="width:100%;height:300px" name="textAdd1">{textAdd1}</textarea></th>
+        </tr>
+<!--        <tr>
+            <th  colspan="2"><p><strong>После акции:</strong></p><textarea style="width:100%;height:300px" name="textAdd2">{textAdd2}</textarea></th>
+        </tr> -->
+
+        <tr>
+            <td align="right">[SEO] Заголовок браузера:</td>
+            <td align="left"><input name="pageTitle" type="text" id="pageTitle" style="width: 99%;" value="{valuePageTitle}" maxlength="255" />      </td>
+        </tr>
+        <tr>
+            <td align="right">[SEO] Заголовок H1:</td>
+            <td align="left"><input name="pageH1" type="text" id="pageH1" style="width: 99%;" value="{valuepageH1}" maxlength="255" />      </td>
+        </tr>
+        <tr>
+            <td align="right">[SEO] Описание (MD):</td>
+            <td align="left"><input type="text" name="md" style="width: 99%;" value="{valueMd}"></td>
+        </tr>
+
+        <!--
+        <tr>
+            <td align="right">
+                Язык добавляемой страницы:		</td>
+
+            <td align="left">
+                [selectLang="{valueLang}"]		</td>
+        </tr>
+        -->
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="   СОХРАНИТЬ   " class="submit" id="formSubmit"></td>
+        </tr>
+    </table>
+    <input type="hidden" name="go" value="go">
+</form>

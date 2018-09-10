@@ -1,0 +1,61 @@
+<a class="jump_back" href="/admin/city/">Назад</a>
+<form action="?go=go&id={id}" method="post" enctype="multipart/form-data">
+    <table border="0" width="100%" cellpadding="4" cellspacing="0" class="category_list">
+		<input type="hidden" name="ownerId" value="" />
+        <tr>
+            <td colspan="2" align="center">{error}</td>
+        </tr>
+	 
+		<tr>
+            <td align="right"><strong>Домен включен:</strong></td>
+            <td>[selectNavigationShow="{navigationShow}"]</td>
+        </tr>
+	 
+		<tr>
+            <td align="right"><strong>Регион:</strong></td>
+            <td id="regionch">{selectregion}</td>
+        </tr>
+		
+		<tr>
+            <td width="50%" align="right"><strong>Город:</strong></td>
+            <td id="citych">{selectcity}</td>
+        </tr>
+		
+		<tr>
+            <td valign="top" width="50%" align="right"><strong>Домен:</strong></td>
+            <td><input name="domen" type="text" id="domen" style="width:35%;" value="{domen}">{host}<br />
+                <small><em>Только латинские символы, например: irkutsk. <br/> ДОМЕН НЕ ИСПОЛЬЗУЕТСЯ ЕСЛИ ВЫБРАН ПО УМОЛЧАНИЮ.</em></small></td>
+        </tr>
+		<!--<tr>
+            <td valign="top" align="right"><strong>Домен по умолчанию:</strong></td>
+            <td>{selectdefault} 
+                <small><em>По умолчанию может быть только один регион</em></small></td>
+        </tr>
+		-->
+		<tr>
+            <td valign="top" align="right"><strong>Тип цен для интернет магазина:</strong></td>
+            <td>{selectprycestypes}</td>
+        </tr>
+		<tr>
+            <td valign="top" align="right"><strong>Склады самовывоза:</strong></td>
+            <td>{selectstocks}</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="  Сохранить  " class="submit" id="submitForm"></td>
+        </tr>
+    </table>
+</form>	
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#select{id}').change( function(){
+		$.ajax({
+		 url: "getCityRegion.php",
+		 type: "POST",
+		 data: {region:$(this).val()},
+		 success: function(data){   
+		   $("#citych").html(data);
+		 }
+		});
+	});
+ });
+ </script>

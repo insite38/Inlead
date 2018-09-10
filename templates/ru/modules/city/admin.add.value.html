@@ -1,0 +1,28 @@
+<a href="/admin/city/index.php" class="jump_back">Назад</a>
+<form action="/admin/city/edit.php?name={id}" method="post" class="general_form">
+    <div class="row">
+        <label>Название города:</label>
+        <div class="inputs">
+            <span class="input_wrapper">
+                <input class="text" type="text" name="city" value="{city}" />
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <label>Название на транслите:</label>
+        <div class="inputs">
+            <span class="input_wrapper">
+                <input class="text" type="text" name="name" value="{name}" />
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <label>ROBOTS:</label>
+        <div class="inputs">
+            <span class="input_wrapper">
+                <input class="text" type="text" name="robots" value="{robots}" />
+            </span>
+        </div>
+    </div>
+    <p align="center"><input type="submit" id="submit" value="Сохранить" /></p>
+</form>

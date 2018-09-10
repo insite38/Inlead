@@ -1,0 +1,182 @@
+* 		{margin:0;padding: 0;}
+html 	{height:100%;}
+body	{font:12px Arial, Helvetica, sans-serif;width:100%;color:#444;background:#fff;height:100%;}	
+
+a 		{color:#406681;outline:none; border:0;}
+a:hover	{text-decoration:none}
+	
+img		{border:0}
+p		{margin:0 0 10px 0}
+
+.clear:after {content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clear {display: inline-block;}
+.clear {display: block;}
+.clearboth {clear:both}
+table {border-collapse: collapse; border:0;}
+table tr td {vertical-align: top; border:0;}
+tbody{border:0;}
+tr{border:0;}
+td{border:0;}
+ul {list-style:none}
+
+h1,h2,h3,h4,h5,h6{color:#222; font-weight: 500}
+h1 {font-size:29px;margin-bottom:13px;   }
+	body.inner h1 {margin-bottom: 25px}
+h2 {font-size:20px;margin-bottom:7px; color:#6c7f8c;  border-bottom: 2px solid #c4d2dd}
+h3 {font-size:16px;margin-bottom:10px}
+h4 {font-size:14px;margin-bottom:7px}
+
+fieldset {border:0}
+input, textarea {outline:none;font:11px Tahoma, Geneva, sans-serif;}
+input.button {cursor:pointer}
+
+div.page {position: relative;min-height: 100%;height: 100%;  }
+html>body div.page {height: auto;}
+
+hr {height: 1px; color:#c7d3dd; background: #c7d3dd; font-size: 0; border: 0; margin:0 0 15px 0}
+
+/*//////////------//////////*/
+/*          Header          */
+/*//////////------//////////*/
+div.contacts { background:url(/i/contacts_bg.png) 0 0 repeat-x }
+div.contactsIn {height: 235px; padding: 20px 0 0 0; width: 950px; margin:  0 auto; display: none; }
+
+div.contacts div.map {float: left; width: 333px; font-size:11px;  color:#949494; }
+div.contacts div.map img {margin-bottom: 2px;}
+
+div.contacts div.text {float: left; width: 300px; padding-top: 15px; color:#222;  }
+div.contacts div.text p.address {padding-left: 45px; background:url(/i/ico_address.png) 0 4px no-repeat; font-size: 16px; color:#406681; line-height: 16px; margin-bottom:10px }
+div.contacts div.text p.address big {display: block; font-size: 18px; line-height: 18px}
+
+div.contacts div.text p.where {color:#797979; font-size: 18px; margin:7px 0 }
+div.contacts div.text p u {border-bottom: 2px solid #878788; text-decoration: none}
+
+div.contacts div.phonemail {float: right;color:#005695;  width: 265px; height: 139px; padding: 25px 0 0 36px; margin: 25px 0 0 0; background:url(/i/phonemail.jpg) 0 0 no-repeat }
+div.contacts div.phonemail p.phone {font-size: 33px; background:url(/i/ico_phone.png) 0 8px no-repeat; margin-bottom: 10px; padding-left: 40px  }
+div.contacts div.phonemail p.phone span {font-size: 24px; color:#d78500;}
+
+div.contacts div.phonemail p.mail {font-size: 24px; text-decoration: none; margin-bottom: 10px;padding-left:40px; background:url(/i/ico_mail.png) 0 2px no-repeat; } 
+div.contacts div.phonemail p.mail a {text-decoration: none; color:#005695}
+div.contacts div.phonemail p.mail a:hover {text-decoration: underline;}
+
+/*//////////------//////////*/
+/*          Content         */
+/*//////////------//////////*/
+div.body {width: 995px; margin: 0 auto}
+div.right {width:550px;float:right; margin-right: 25px; }
+
+div.topmenu {font-size: 20px; margin-bottom: 25px}
+	body.inner div.topmenu  {margin-bottom: 5px}
+div.topmenu ul {padding-left:6px}
+div.topmenu li {float: left; padding: 12px 28px 0 0; }
+div.topmenu a {color:#6c7f8c; text-decoration: none; padding-bottom: 4px; zoom:1}
+div.topmenu a:hover, div.topmenu li.active a {color:#212121; border-bottom: 2px solid #dbe3e8}
+div.topmenu li#contactsLink {padding: 12px 0 0 0; text-align: center; height: 48px;  width: 107px;  background: url(/i/topmenu_contacts.jpg) 0 0 no-repeat;}
+div.topmenu li#contactsLink a {color:#406681}
+
+
+div.content {padding: 0 20px 50px 0}
+
+div.content ul {color:#222; }
+div.content ul li {text-indent: 15px; background:url(/i/li.gif) 5px 5px no-repeat; padding-bottom: 14px  }
+
+div.content span.blue {color:#005695}
+
+div.content ul.services {padding-top: 10px; color:#666}
+div.content ul.services li {padding:0 0 10px 0; background: none   }
+div.content ul.services li a.service {padding-left: 15px; font-size: 24px; text-decoration: none;  color:#222; display: block; margin-bottom: 3px; background:url(/i/li_big.gif) 0 12px no-repeat;}
+div.content ul.services li a.service:hover {color:#406681;  }
+div.content ul.services li a.service u {text-decoration: none}
+div.content ul.services li a.service:hover u {border-bottom: 2px solid #406681;}
+
+div.content img {}
+
+div.bottom {clear: both; background:#e9f3fc url(/i/bottom.gif) 0 0 repeat-x }
+div.bottomIn {width: 995px; margin: 0 auto; padding: 18px 0 10px 0}
+
+div.poll {width: 355px; float: left; background:url(/i/pollbg_t.png) 0 0 no-repeat; }
+	body.inner div.poll {background: url(/i/pollbg_t_inner.png) 0 0 no-repeat}
+div.pollIn {padding:5px 40px 33px 25px; background: url(/i/pollbg_b.png) 0 100% no-repeat}
+	body.inner div.pollIn {background: url(/i/pollbg_b_inner.png) 0 100% no-repeat}
+div.poll h3 {color:#d78500; font-size: 22px;  margin-bottom: 15px;}
+div.poll h3 u {text-decoration: none; border-bottom: 2px solid #d78500; padding-bottom: 2px}
+div.poll p.question {margin-bottom: 9px}
+div.poll p.a {margin-bottom: 9px; }
+div.poll .button {margin-left: 95px; width:79px; height: 24px; text-align: center; font-size: 13px; color:#303030; background:url(/i/poll_button.gif) 0 0 no-repeat; border: 0; padding-bottom: 2px }
+
+div.bottom div.news {width: 635px; float:left; padding: 5px 0 0 5px }
+	body.inner div.bottom div.news {width: auto; padding-bottom: 40px}
+div.bottom div.news h3 {font-size: 22px; color:#005695; margin-bottom: 15px; }
+div.bottom div.news h3 u {text-decoration: none; border-bottom: 2px solid #005695; padding-bottom: 2px}
+
+div.bottom div.news ul {color:#222; padding-bottom: 22px }
+div.bottom div.news ul li {width:195px; padding-right: 15px; float: left; line-height: 18px; }
+		body.inner div.bottom div.news ul li {width: 210px; padding-right: 25px}
+div.bottom div.news ul p.date {margin-bottom: 0;  line-height: normal; font-size: 11px; color:#777; }
+div.bottom div.news ul p.title {font-size: 16px; margin-bottom: 6px; line-height: normal;}
+div.bottom div.news ul p.title a {text-decoration: none}
+div.bottom div.news ul p.title a:hover {text-decoration: underline}
+div.bottom div.news ul a.readon {display: inline-block;  width:16px; height: 16px; position: relative; top:4px; background:url(/i/news_readon.gif) 0 0 no-repeat; }
+div.bottom div.news a.readall {float: right; margin-right: 15px; text-decoration: none; font-size: 14px; padding-bottom: 3px; background:url(/i/underline.gif) 0 100% repeat-x }
+	body.inner div.bottom div.news a.readall {margin-right: 25px}
+div.bottom div.news a.readall:hover {background: none}
+
+*+html div.bottom div.news a.readon {top:1px}
+* html div.bottom div.news a.readon {top:1px}
+
+
+/*~~~~ВНУТРЕННИЕ СТРАНИЦЫ~~~~*/
+div.breadcrumbs {font-size: 11px;  color:#777; margin-bottom: 4px; }
+div.breadcrumbs a {color:#777;}
+div.breadcrumbs big {font-size: 15px}
+
+a.button {display: inline-block; padding-left: 10px; margin-right: 15px; text-decoration: none; background:url(/i/button_l.png) 0 0 no-repeat }
+* html a.button {width: 0; white-space: nowrap; position: relative; top:5px}
+a.button span {display: block; padding: 3px 10px 0 0; height: 21px; color:#303030; font-size: 14px; background: url(/i/button_r.png) 100% 0 no-repeat}
+*+html a.button {position: relative; top:5px}
+
+/*//////////------//////////*/
+/*           Left           */
+/*//////////------//////////*/
+div.left {width:355px;float:left; padding: 50px 0; margin-bottom: 30px}
+div.logo {padding-left: 20px; margin-bottom: 30px; }
+
+
+div.leftmenu {padding:0 0 30px 20px; font-size: 20px;}
+div.leftmenu li {padding-bottom: 10px}
+div.leftmenu a {padding-left: 12px; color:#6c7f8c; }
+div.leftmenu a:hover {color:#212121; background:url(/i/leftmenu_li.gif) 0 8px no-repeat;}
+div.leftmenu a:visited {color:#212121; background:url(/i/leftmenu_li.gif) 0 8px no-repeat;}
+div.leftmenu a:active {color:#000000}
+
+
+/*//////////------//////////*/
+/*          Footer          */
+/*//////////------//////////*/
+div.footerPadding {p1adding-bottom: 107px;}
+div.footer {clear:both;width:100%; p1osition:absolute;bottom:0;height:107px; background:url(/i/footer.png) 0 0 repeat-x; overflow: hidden }
+div.footerIn {width: 940px; margin: 0 auto; padding-top: 10px}
+
+div.footer div.l {float: left; width: 325px;}
+div.footer p.city {color:#747474;margin-bottom: 0}
+div.footer p.city big {color:#4f4f4f; font-size: 15px}
+
+div.footer p.phone {font-size: 27px; color:#005695; margin-bottom: 10px }
+div.footer p.phone small {color:#d78500; font-size: 21px}
+
+div.footer p.links {font-size: 11px}
+div.footer p.links a {color:#4f4f4f}
+div.footer p.links a:hover {color:#005695}
+div.footer p.links span.sep {padding: 0 5px}
+
+div.footer div.c {float: left; width: 300px; padding-top: 3px; color:#4f4f4f}
+
+div.footer div.r {float: right; width: 160px; padding-top: 5px; font-size: 9px; line-height: 10px !important}
+div.footer div.r img {float: right;}
+div.footer div.r a {color:#4f4f4f; text-decoration: none}
+div.footer div.r a:hover {color:#005695; text-decoration: underline}
+
+/***/
+.date {margin-bottom: 0;  line-height: normal; font-size: 11px; color:#777; }
+.title {font-size: 16px; margin-bottom: 6px; line-height: normal; color:#416781;}
+

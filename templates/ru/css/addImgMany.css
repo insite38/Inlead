@@ -1,0 +1,29 @@
+.img_add_many{
+    width: 200px;
+    position: relative;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    border: 1px #848484 solid;
+}
+
+.del-img-many{
+    background-image: url("/templates/ru/images/red_ico.png");
+    z-index: 100;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: -11px;
+    right: -9px;
+    cursor: pointer;
+}
+
+.img_add_many img {
+    width: 100%;
+}
+
+.img_add_many input{
+    margin-left: 4px;
+    margin-bottom: 5px;
+    width: 182px;
+}

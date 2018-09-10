@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><!--admin-->
+    <head>
+        <meta charset="utf-8" />
+        <title>Авторизация</title>
+        <link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/layout.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/templates/ru/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="login">
+			<h1 class="auth site_title">Plaza CMS</h1>
+          <div class="login-form">
+			<form class="general_form" action="[SELF]" method="post">
+				 
+                <div class="row">
+                    <label></label>
+                    <div class="inputs">
+                        <span class="input_wrapper">
+							<i class="fa fa-user"></i>
+                            <input class="text" type="text" name="authLogin" maxlength="255" value="" placeholder="Имя пользователя" />
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label></label>
+                    <div class="inputs">
+                        <span class="input_wrapper">
+							<i class="fa fa-lock"></i>
+                            <input class="text" type="password" name="authPassword" value="" placeholder="Пароль" />
+                        </span>
+                    </div>
+                </div>
+                <p align="center"><input class="submit" type="submit" value="Войти" id="submit"></p>
+				<span class="copyright">(с) In-site.ru</span>
+            </form>
+         </div>
+		</div>
+    </body>
+</html>
